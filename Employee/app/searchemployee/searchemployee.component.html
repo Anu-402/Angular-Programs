@@ -1,0 +1,19 @@
+<form>
+
+  <div class="form-group">
+    <label for="empid">Enter Employee   Id </label>
+    <input [(ngModel)]="empid" type="number"  class="form-control" name="empid"  id="empid" >
+  </div>
+
+
+
+ <button   (click)="searchEmployee()" type="submit" class="btn btn-primary"> Search Employee  </button>
+
+</form>
+
+<div>
+
+  <h1> Employee Id = {{employee.employeeId}}</h1>
+  <h1> Employee Name  = {{employee.employeeName}}</h1>
+  <h1> Employee Salary  = {{employee.salary}}</h1>
+</div>

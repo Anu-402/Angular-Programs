@@ -1,0 +1,16 @@
+<div class="jumbotron text-center">
+    <div class="form-group">
+      <h1>Delete Trainee Details</h1>  
+      <label for="traineeid">Trainee Id </label>
+        <input [(ngModel)]="trainee.traineeId" type="number"  class="form-control" name="traineeid"  id="traineeid" >
+      </div> 
+  <button (click)="delete(trainee.traineeId)" class="btn btn-primary">Delete</button>
+</div>
+<div>
+  <!-- <h1>Trainee Id= {{trainee.traineeId}}</h1>
+  <h1>Trainee Name = {{ trainee.traineeName}}</h1>
+  <h1>Trainee Location={{trainee.traineeLocation}}</h1>
+  <h1>Domain ={{trainee.traineeDomain}}</h1> -->
+
+</div>
+

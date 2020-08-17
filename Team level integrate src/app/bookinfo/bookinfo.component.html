@@ -1,0 +1,27 @@
+<section class="mx-auto p-2">
+
+    <section *ngIf="!newFlag">
+        <h2 id="heading">BookList</h2>
+        <hr>
+        <div class="p-2"><a class="btn btn-info text-white" (click)="viewBook()">View books</a></div>
+    </section>
+    <section class="col-md-12 mx-auto" *ngIf="viewBookFlag">
+        <h2 class="text-center">Books</h2>
+        <table class="table table-dark table-striped table-hover col-md-10 mx-auto mt-3">
+            <tr>
+                <!-- <th>Image</th> -->
+                <th>Book ID</th>
+                <th>Book Name</th>
+                <th>Amount</th>
+            </tr>
+            <tr *ngFor="let b of books">
+                <!-- <td><img src="assets/img/{{t.testId}}.jpg" height="200" width="250" /></td> -->
+                <td>{{b.bookId}}</td>
+                <td>{{b.title}}</td>
+                <td>{{b.price |currency:'INR'}}</td>
+                <td><a class="btn btn-info" (click)=addBookToCart(b.bookId)>Add to Cart</a></td>
+            </tr>
+        </table>
+    </section>
+
+</section>

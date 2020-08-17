@@ -1,0 +1,106 @@
+<div class="jumbotron text-center">
+<h1>Update Test</h1>
+<div [hidden]="submitted">
+<form #testform="ngForm"  novalidate >
+    <div class="form-group">
+        <label for="testId">Enter Test Id</label>
+        <input [(ngModel)]="test.testId" #testId="ngModel" type="number" class="form-control" pattern="[0-9]{4}" id="testId"  name="testId" required>  
+        <div *ngIf ="testId.invalid && (testId.dirty || testId.touched)" class="alert alert-danger">
+            <div *ngIf="testId.errors.required">
+                Test Id is required
+            </div>
+            <div *ngIf="testId.errors.pattern">
+                Test Id must be 4 Digits
+            </div>
+          </div> 
+    </div>
+
+    
+    
+    <div class="form-group">
+        <label for="testName">Enter Test Name</label>
+        <input [(ngModel)]="test.testName" #testName="ngModel" type="text" class="form-control"  id="testName" minlength="4" pattern="[a-zA-Z]+"  name="testName" required>
+        <div *ngIf ="testName.invalid && (testName.dirty || testName.touched)" class="alert alert-danger">
+            <div *ngIf="testName.errors.required">
+                Test Name is Required
+            </div>  
+            <div *ngIf="testName.errors.minlength">
+                Test Name should be atleast 4 characters
+            </div>
+            <div *ngIf="testName.errors.pattern">
+                Test Name Should contain only characters
+            </div>
+            </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="centerId">Enter Center Id</label>
+        <input [(ngModel)]="test.center.centerId" #centerId="ngModel" type="number" class="form-control"  pattern="[0-9]{4}" id="centerId"   name="centerId" required>
+        <div *ngIf ="centerId.invalid && (centerId.dirty || centerId.touched)" class="alert alert-danger">
+            <div *ngIf="centerId.errors.required">
+                Center Id is required
+            </div>
+            <div *ngIf="centerId.errors.pattern">
+                Center Id must be 4 Digits
+            </div>
+          </div> 
+    </div>
+
+
+    <div class="form-group">
+        <label for="centerName">Enter Center Name</label>
+        <input [(ngModel)]="test.center.centerName" #centerName="ngModel" type="text" class="form-control"  id="centerName" minlength="4" pattern="[a-zA-Z]+"   name="centerName" required>
+        <div *ngIf ="centerName.invalid && (centerName.dirty || centerName.touched)" class="alert alert-danger">
+            <div *ngIf="centerName.errors.required">
+                Center Name is Required
+            </div>  
+            <div *ngIf="centerName.errors.minlength">
+                Center Name should be atleast 4 characters
+            </div>
+            <div *ngIf="centerName.errors.pattern">
+                Center Name Should contain only characters
+            </div>
+            </div>
+    </div>
+    
+    
+    <div class="form-group">
+        <label for="centerLocation">Enter Center Loacation</label>
+        <input  [(ngModel)]="test.center.centerLocation" #centerLocation="ngModel" type="text" class="form-control" id="centerLocation"minlength="4" pattern="[a-zA-Z]+"  name="centerLocation" required>
+        <div *ngIf ="centerLocation.invalid && (centerLocation.dirty || centerLocation.touched)" class="alert alert-danger">
+            <div *ngIf="centerLocation.errors.required">
+                Center Location is Required
+            </div>  
+            <div *ngIf="centerLocation.errors.minlength">
+                Center Location should be atleast 4 characters
+            </div>
+            <div *ngIf="centerLocation.errors.pattern">
+                Center Location Should contain only characters
+            </div>
+            </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="centerAddress">Enter Center Address</label>
+        <input [(ngModel)]="test.center.centerAddress" #centerAddress="ngModel" type="text" class="form-control"  id="centerAddress" name="centerAddress" minlength="4" pattern="[a-zA-Z]+" required>
+        <div *ngIf ="centerAddress.invalid && (centerAddress.dirty || centerAddress.touched)" class="alert alert-danger">
+            <div *ngIf="centerAddress.errors.required">
+                Center Address is Required
+            </div>  
+            <div *ngIf="centerAddress.errors.minlength">
+                Center Address should be atleast 4 characters
+            </div>
+            <div *ngIf="centerAddress.errors.pattern">
+                Center Address Should contain only characters
+            </div>
+            </div>
+    </div>
+    
+    
+    
+    <button [disabled]="!testform.form.valid" (click)="updateTest()" type="submit" class="btn btn-success">Update</button>
+</form>
+</div>
+</div>

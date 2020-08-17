@@ -1,0 +1,22 @@
+<div class="jumbotron text-center">
+  <h1>Trainee Details</h1>
+    <table class="table table-hover">
+      <tbody>
+        <tr>
+          <th>S.No</th>
+          <th>Trainee Id</th>
+          <th>Trainee Name</th>
+          <th>Trainee Location</th>
+        <th> Trainee Domain</th>          
+        </tr>
+       <tr *ngFor="let trainee of arr;let i=index">
+         <td>{{i}}</td>
+         <td>{{trainee.traineeId}}</td>
+         <td>{{trainee.traineeName}}</td>
+         <td>{{trainee.traineeLocation}}</td>
+         <td>{{trainee.traineeDomain}}</td>
+       </tr>
+      </tbody>
+    </table>
+  </div>
+  

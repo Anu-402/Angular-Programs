@@ -1,0 +1,35 @@
+<div class="jumbotron text-center">
+    <h1>Test Details</h1>
+      <table class="table table-hover">
+        <tbody>
+          <tr>
+            <th>S.No</th>
+            <th>Test Id</th>
+            <th>Test Name</th>  
+            <th>Center Id</th>
+            <th>Center Name</th>  
+            <th>Center Loaction</th>
+            <th>Center Address</th>
+            <th>Action</th> 
+            <th>Action</th>    
+          </tr>
+         <tr *ngFor="let test of arr;let i=index">
+           <td>{{i}}</td>
+           <td>{{test.testId}}</td>
+           <td>{{test.testName}}</td>
+           <td>{{test.center.centerId}}</td>
+           <td>{{test.center.centerName}}</td>
+           <td>{{test.center.centerLocation}}</td>
+           <td>{{test.center.centerAddress}}</td>
+           <td><button (click)="updateTest(test.testId)"class="btn btn-light btn-sm">Update test</button></td>
+          <td>
+            <button (click)="deleteTest(test.testId)" class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <button (click)="addTest()"class="btn btn-primary btn-lg">Add Center</button>
+      <button (click)="logout()" class="btn btn-danger btn-lg">Logout</button>
+
+    </div>
+    

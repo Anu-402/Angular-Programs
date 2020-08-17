@@ -1,0 +1,50 @@
+<div class="jumbotron text-center">
+<h1>Add Trainee Details</h1>
+    <form>
+        <div class="form-group">
+          <label for="traineeid">Trainee Id </label>
+          <input [(ngModel)]="trainee.traineeId" type="number"  class="form-control" name="traineeid"  id="traineeid" >
+        </div>
+  
+        <div class="form-group">
+            <label for="traineename">Trainee Name </label>
+            <input  [(ngModel)]="trainee.traineeName"   type="text"  class="form-control" name="traineename"  id="traineename">
+        
+        </div> 
+        <div class="form-group">
+            <label for="traineelocation">Trainee Location</label>
+            <input [(ngModel)]="trainee.traineeLocation" type="radio" id="chennai" name="location" value="chennai">
+            <label for= "chennai">Chennai</label><br>
+            <input [(ngModel)]="trainee.traineeLocation"type="radio" id="mumbai" name="Location" value="mumbai">
+            <label for="mumbai">Mumbai</label><br>
+            <input  [(ngModel)]="trainee.traineeLocation"type="radio" id="pune" name="Location" value="pune">
+            <label for="pune">Pune</label><br>
+            <input [(ngModel)]="trainee.traineeLocation" type="radio" id="banglore" name="Location" value="banglore">
+            <label for="banglore">Bangalore</label><br>
+            
+        </div>
+        <div class="form-group">
+            <label for="traineedomain">Trainee Domain</label>
+            <!-- <input [(ngModel)]="tr.tdomain"  type="drop"  class="form-control" name="tdomain"  id="tdomain"> -->
+            <select [(ngModel)]="trainee.traineeDomain"type="drop"id="traineedomain" name="traineedomain">
+            <option value="Java">Java</option>
+            <option value="C">C</option>
+            <option value =".Net">.Net</option>
+            <option value="Gate">Gate</option>
+        </select>
+        </div>
+       <button  (click)="addTrainee()" type="submit" class="btn btn-primary"> Add Trainee  </button>
+  
+      </form>
+  
+  </div>
+  <div>
+    <tr *ngFor="let trainee of arr| async">
+    <td>{{ temp.traineeId }}</td>
+    <td>{{ temp.traineeName }}</td>
+    <td>{{ temp.traineeLocation }}</td>
+    <td>{{temp.traineeDomain}}</td>
+</tr> 
+  </div>
+  
+  

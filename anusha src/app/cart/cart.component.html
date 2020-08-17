@@ -1,0 +1,26 @@
+
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                <th style="height: 40px; width: 100px;">No</th>
+                <th>Book</th>
+                <th>Author</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>SubTotal</th>
+                <th><button (click)="clearCartByCustomerId()" class="btn btn-danger">Clear Cart</button></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cart of cartProducts; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{cart.book.title}}</td>
+                    <td>{{cart.book.author}}</td>
+                    <td>{{cart.book.price}}</td>
+                    <td>{{cart.quantity}}</td>
+                    <td>{{cart.subTotal}}</td>
+                    <td><button (click)="removecartItem(cart.cartId)" class="btn btn-danger">Delete</button>
+                </tr>
+
+                           </tbody>
+        </table>

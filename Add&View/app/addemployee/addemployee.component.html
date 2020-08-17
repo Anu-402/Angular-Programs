@@ -1,0 +1,33 @@
+<div class="jumbotron">
+
+  <form>
+
+      <div class="form-group">
+        <label for="empid">Enter Employee   Id </label>
+        <input [(ngModel)]="emp.employeeId" type="number"  class="form-control" name="empid"  id="empid" >
+      </div>
+
+      <div class="form-group">
+          <label for="ename">Enter Employee Name </label>
+          <input  [(ngModel)]="emp.employeeName"   type="text"  class="form-control" name="ename"  id="ename">
+      </div>
+
+
+
+      <div class="form-group">
+          <label for="salary">Enter Salary </label>
+          <input [(ngModel)]="emp.salary"  type="number"  class="form-control" name="salary"  id="salary">
+      </div>
+
+     <button   (click)="addEmployee()" type="submit" class="btn btn-primary"> Add Employee  </button>
+
+    </form>
+
+</div>
+<div>
+  Employee Added success
+  <h1>{{ temp.employeeId }}</h1>
+  <h1>{{ temp.employeeName }}</h1>
+  <h1>{{ temp.salary }}</h1>
+</div>
+
